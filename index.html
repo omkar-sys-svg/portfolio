@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omkar Chaurasia - Video Editor Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#work">Skip to portfolio work</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- FLOATING AVAILABILITY BADGE -->
+  <div class="avail-badge">
+    <img class="avail-avatar"
+      src="https://pps.services.adobe.com/api/profile/F4925E8C5E2DA5AE0A495EEE@AdobeID/image/c2817132-9940-4aa7-a7cf-050923af1e13/276"
+      alt="Omkar" />
+    <div class="avail-text">
+      <div class="avail-name">Omkar Chaurasia</div>
+      <div class="avail-status"><span class="avail-dot"></span>Available for hire - Now</div>
+    </div>
+    <a href="https://api.whatsapp.com/send/?phone=919867315087&text&type=phone_number&app_absent=0"
+      class="avail-btn">Hire Omkar</a>
+  </div>
+
+  <div class="mobile-quick-actions" aria-label="Quick actions">
+    <a href="#work">View Work</a>
+    <a href="https://api.whatsapp.com/send/?phone=919867315087&text&type=phone_number&app_absent=0">Hire Omkar</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo magnetic-btn" aria-label="Go to top">O<span>.</span>C</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#software">Software</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#connect">Contact</a>
+    </div>
+    <a href="https://api.whatsapp.com/send/?phone=919867315087&text&type=phone_number&app_absent=0"
+      class="nav-hire magnetic-btn">Hire Me</a>
+    <button class="nav-toggle magnetic-btn" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ===================== HERO (EDITOR COVER) ===================== -->
+  <section id="hero" class="hero-reel hero-cover">
+    <div class="hero-media-stage" id="heroMediaStage" aria-hidden="true">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata">
+        <source src="./vid/tvc/tvc1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="hero-cover-shade" aria-hidden="true"></div>
+
+    <div class="hero-edit-shell">
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span class="record-dot"></span>
+          <span>Available for brand films, reels, and ads</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-line">Omkar Chaurasia</span>
+        </h1>
+        <div class="hero-role">Cinematic Video Editor & Motion Designer</div>
+
+        <p class="hero-punchline">I turn raw footage into sharp, polished edits that feel premium, move fast, and make
+          clients confident before they press publish.</p>
+
+        <div class="hero-specialties" aria-label="Portfolio categories">
+          <span>Reels</span>
+          <span>Commercials</span>
+          <span>Podcasts</span>
+          <span>Motion Graphics</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#work" class="hero-action hero-action--primary magnetic-btn">Watch the work</a>
+          <a href="#connect" class="hero-action hero-action--ghost magnetic-btn">Start a project</a>
+        </div>
+      </div>
+
+      <div class="hero-cover-proof" aria-label="Portfolio highlights">
+        <div>
+          <strong>01</strong>
+          <span>Clean story cuts</span>
+        </div>
+        <div>
+          <strong>4K</strong>
+          <span>Delivery ready</span>
+        </div>
+        <div>
+          <strong>AI</strong>
+          <span>Assisted workflow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK (CINEMATIC SHOWCASE) ===================== -->
+  <section id="work" class="work-showcase">
+    <!-- Animated Background Canvas -->
+    <canvas id="workBgCanvas" class="work-bg-canvas"></canvas>
+    <div class="work-bg-glow"></div>
+    <div class="work-bg-glow work-bg-glow--alt"></div>
+    <div class="work-intro">
+      <div class="work-intro-copy">
+        <div class="section-label">Project Reel</div>
+        <div class="section-title reveal">Cuts That <span>Move</span></div>
+        <p class="section-sub reveal reveal-delay-1">A sharper look at reels, commercials, podcasts, pacing, captions,
+          color, and motion work.</p>
+      </div>
+
+      <div class="work-filters reveal reveal-delay-2">
+        <button class="filter-btn active magnetic-btn" data-filter="all" aria-pressed="true">All Work</button>
+        <button class="filter-btn magnetic-btn" data-filter="reels" aria-pressed="false">Reels & Shorts</button>
+        <button class="filter-btn magnetic-btn" data-filter="tvc" aria-pressed="false">Commercials & TVCs</button>
+        <button class="filter-btn magnetic-btn" data-filter="podcast" aria-pressed="false">Podcasts</button>
+      </div>
+    </div>
+
+    <div class="work-reel-shell">
+      <div class="work-grid-wrapper">
+        <div class="work-grid work-reel-list" id="workGrid">
+          <article class="work-card work-project-card card-portrait" tabindex="0">
+            <div class="work-card-number">01</div>
+            <div class="work-card-media">
+              <div class="work-card-fallback">
+                <span>reels</span>
+                <strong>Urban Stories</strong>
+              </div>
+              <video src="./vid/reels/reel1.mp4" loop muted playsinline preload="metadata"></video>
+              <div class="work-card-progress"><div class="work-card-progress-fill"></div></div>
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-copy">
+                <span class="work-card-tag">reels</span>
+                <h4 class="work-card-title">Urban Stories</h4>
+                <p class="work-card-desc">Street-style cinematic cut</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card work-project-card card-portrait" tabindex="0">
+            <div class="work-card-number">02</div>
+            <div class="work-card-media">
+              <div class="work-card-fallback">
+                <span>reels</span>
+                <strong>Brand Vibes</strong>
+              </div>
+              <video src="./vid/reels/reel2.mp4" loop muted playsinline preload="metadata"></video>
+              <div class="work-card-progress"><div class="work-card-progress-fill"></div></div>
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-copy">
+                <span class="work-card-tag">reels</span>
+                <h4 class="work-card-title">Brand Vibes</h4>
+                <p class="work-card-desc">Fashion brand highlight video</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card work-project-card card-landscape" tabindex="0">
+            <div class="work-card-number">03</div>
+            <div class="work-card-media">
+              <div class="work-card-fallback">
+                <span>TVC</span>
+                <strong>Product Launch</strong>
+              </div>
+              <video src="./vid/tvc/tvc1.mp4" loop muted playsinline preload="metadata"></video>
+              <div class="work-card-progress"><div class="work-card-progress-fill"></div></div>
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-copy">
+                <span class="work-card-tag">TVC</span>
+                <h4 class="work-card-title">Product Launch</h4>
+                <p class="work-card-desc">30-second commercial TVC spot</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card work-project-card card-portrait" tabindex="0">
+            <div class="work-card-number">04</div>
+            <div class="work-card-media">
+              <div class="work-card-fallback">
+                <span>podcast</span>
+                <strong>Tech Talk Snippet</strong>
+              </div>
+              <video src="./vid/podcast/pod1.mp4" loop muted playsinline preload="metadata"></video>
+              <div class="work-card-progress"><div class="work-card-progress-fill"></div></div>
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-copy">
+                <span class="work-card-tag">podcast</span>
+                <h4 class="work-card-title">Tech Talk Snippet</h4>
+                <p class="work-card-desc">Vertical podcast clip with captions</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CINEMATIC LIGHTBOX ===================== -->
+  <div class="lightbox" id="videoLightbox" role="dialog" aria-modal="true" aria-hidden="true"
+    aria-labelledby="lightboxTitle">
+    <div class="lightbox-bg" id="lightboxBg"></div>
+    <button class="lightbox-close magnetic-btn" id="lightboxClose" type="button" aria-label="Close video preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="lightbox-container">
+      <div class="lightbox-player-wrapper">
+        <div class="lightbox-ambient-glow" id="lightboxAmbient"></div>
+        <video class="lightbox-video" id="lightboxVideo" playsinline></video>
+
+        <!-- Custom Controls -->
+        <div class="lightbox-controls">
+          <div class="lightbox-progress-bar" id="lightboxProgressWrap">
+            <div class="lightbox-progress-fill" id="lightboxProgressFill"></div>
+          </div>
+          <div class="lightbox-controls-row">
+            <div class="control-group-left">
+              <button class="lightbox-btn" id="lightboxPlayBtn" type="button" title="Play/Pause">
+                <svg class="icon-play" viewBox="0 0 24 24">
+                  <polygon points="5,3 19,12 5,21" />
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                  <rect x="6" y="4" width="4" height="16" />
+                  <rect x="14" y="4" width="4" height="16" />
+                </svg>
+              </button>
+              <div class="lightbox-time" id="lightboxTime">0:00 / 0:00</div>
+            </div>
+
+            <div class="control-group-right">
+              <div class="volume-container">
+                <button class="lightbox-btn" id="lightboxMuteBtn" type="button" title="Mute/Unmute">
+                  <svg class="icon-unmute" viewBox="0 0 24 24">
+                    <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  </svg>
+                  <svg class="icon-mute" viewBox="0 0 24 24" style="display:none">
+                    <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" />
+                    <line x1="23" y1="9" x2="17" y2="15" />
+                    <line x1="17" y1="9" x2="23" y2="15" />
+                  </svg>
+                </button>
+                <input type="range" class="volume-slider" id="lightboxVolume" min="0" max="1" step="0.05" value="1">
+              </div>
+              <button class="lightbox-btn" id="lightboxFsBtn" type="button" title="Toggle Fullscreen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lightbox-details">
+        <h3 class="lightbox-title" id="lightboxTitle">Project Title</h3>
+        <p class="lightbox-desc" id="lightboxDesc">Project description...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SKILLS (CLIENT PROOF STACK) ===================== -->
+  <section id="skills" class="skills-studio-section">
+    <div class="skills-studio-shell">
+      <div class="skills-studio-head">
+        <div>
+          <div class="section-label">Skills</div>
+          <div class="section-title reveal">Clean Cuts. <span>Strong Finish.</span></div>
+        </div>
+        <p class="section-sub reveal reveal-delay-1">The core editing strengths clients hire me for.</p>
+      </div>
+
+      <div class="skills-proof-strip reveal reveal-delay-1" aria-label="Client confidence highlights">
+        <div>
+          <strong>Hook</strong>
+          <span>Stronger openings.</span>
+        </div>
+        <div>
+          <strong>Polish</strong>
+          <span>Clean brand feel.</span>
+        </div>
+        <div>
+          <strong>Export</strong>
+          <span>Ready files.</span>
+        </div>
+      </div>
+
+      <div class="skills-studio-layout">
+        <div class="skills-path reveal reveal-delay-1" aria-label="Production stages">
+          <button class="skills-path-step is-active" type="button" data-skill-panel="story">
+            <span>01</span>
+            <strong>Hook Strategy</strong>
+          </button>
+          <button class="skills-path-step" type="button" data-skill-panel="motion">
+            <span>02</span>
+            <strong>Edit Engine</strong>
+          </button>
+          <button class="skills-path-step" type="button" data-skill-panel="vfx">
+            <span>03</span>
+            <strong>Motion Polish</strong>
+          </button>
+          <button class="skills-path-step" type="button" data-skill-panel="finish">
+            <span>04</span>
+            <strong>Delivery QA</strong>
+          </button>
+        </div>
+
+        <div class="skills-layer-board reveal reveal-delay-2">
+          <div class="skills-board-top">
+            <span>Production system</span>
+            <strong>Brief to launch, built with clarity</strong>
+          </div>
+
+          <article class="skills-layer is-active" data-skill-panel="story"
+            style="--skill-accent: #00e5cc; --skill-soft: rgba(0, 229, 204, 0.14); --level: 96%;">
+            <div class="skills-layer-index">H1</div>
+            <div class="skills-layer-copy">
+              <h3>Hook & Story</h3>
+              <p>Turns raw clips into a clear, watchable sequence.</p>
+              <div class="skills-layer-tags">
+                <span>Hooks</span>
+                <span>Pacing</span>
+                <span>Flow</span>
+              </div>
+            </div>
+            <div class="skills-layer-meter">
+              <span>96%</span>
+              <i><b></b></i>
+            </div>
+          </article>
+
+          <article class="skills-layer" data-skill-panel="motion"
+            style="--skill-accent: #f6c85f; --skill-soft: rgba(246, 200, 95, 0.14); --level: 92%;">
+            <div class="skills-layer-index">E2</div>
+            <div class="skills-layer-copy">
+              <h3>Fast Editing</h3>
+              <p>Clean cuts, beat timing, captions, and versions.</p>
+              <div class="skills-layer-tags">
+                <span>Reels</span>
+                <span>Ads</span>
+                <span>Podcasts</span>
+              </div>
+            </div>
+            <div class="skills-layer-meter">
+              <span>92%</span>
+              <i><b></b></i>
+            </div>
+          </article>
+
+          <article class="skills-layer" data-skill-panel="vfx"
+            style="--skill-accent: #8fa8ff; --skill-soft: rgba(143, 168, 255, 0.14); --level: 90%;">
+            <div class="skills-layer-index">M3</div>
+            <div class="skills-layer-copy">
+              <h3>Motion Polish</h3>
+              <p>Titles, transitions, overlays, and light VFX.</p>
+              <div class="skills-layer-tags">
+                <span>Titles</span>
+                <span>VFX</span>
+                <span>AI assist</span>
+              </div>
+            </div>
+            <div class="skills-layer-meter">
+              <span>90%</span>
+              <i><b></b></i>
+            </div>
+          </article>
+
+          <article class="skills-layer" data-skill-panel="finish"
+            style="--skill-accent: #ff8f70; --skill-soft: rgba(255, 143, 112, 0.14); --level: 94%;">
+            <div class="skills-layer-index">Q4</div>
+            <div class="skills-layer-copy">
+              <h3>Final Delivery</h3>
+              <p>Color, sound, captions, and platform exports.</p>
+              <div class="skills-layer-tags">
+                <span>4K</span>
+                <span>9:16</span>
+                <span>Review</span>
+              </div>
+            </div>
+            <div class="skills-layer-meter">
+              <span>94%</span>
+              <i><b></b></i>
+            </div>
+          </article>
+        </div>
+
+        <aside class="skills-focus-panel reveal reveal-delay-3" aria-label="Selected skill details">
+          <span class="skills-focus-kicker">Focus</span>
+          <h3 id="skillFocusTitle">Hook & Story</h3>
+          <p id="skillFocusText">A strong opening and clean sequence.</p>
+          <div class="skills-focus-list" id="skillFocusList">
+            <span>Opening hook</span>
+            <span>Clean flow</span>
+            <span>Tighter cut</span>
+          </div>
+          <div class="skills-focus-stats">
+            <div>
+              <strong>4K</strong>
+              <span>Ready files</span>
+            </div>
+            <div>
+              <strong>9:16</strong>
+              <span>Short-form fit</span>
+            </div>
+            <div>
+              <strong>AI</strong>
+              <span>Assisted QA</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOFTWARE (CLIENT TOOLKIT) ===================== -->
+  <section id="software" class="software-orbs-section">
+    <div class="software-shell">
+      <div class="software-head">
+        <div>
+          <div class="section-label">Software Stack</div>
+          <div class="section-title reveal">Premium Tools,<br /><span>Client-Ready Output</span></div>
+        </div>
+        <p class="section-sub reveal reveal-delay-1">A focused toolkit for polished editing, motion design, thumbnails,
+          export control, and AI-assisted production support that helps clients move from brief to launch faster.</p>
+      </div>
+
+      <div class="software-command-center">
+        <aside class="software-proof-card reveal reveal-delay-1">
+          <span class="software-proof-kicker">Why clients care</span>
+          <h3>Organized files, faster reviews, cleaner final delivery.</h3>
+          <p>Every tool has a job: build the edit, polish the brand layer, package platform versions, and make the final
+            feel ready for a paying audience.</p>
+          <div class="software-proof-points">
+            <span>Project files structured for revisions</span>
+            <span>Exports prepared for ads, reels, YouTube, and pitches</span>
+            <span>AI support used for speed, never as a blind final pass</span>
+          </div>
+          <a href="#connect" class="software-proof-link magnetic-btn">Start a project</a>
+        </aside>
+
+        <div class="orbs-container" aria-label="Editing software and workflow tools">
+          <article class="software-orb reveal" style="--sw-color: #9999ff; --sw-glow: rgba(153, 153, 255, 0.28);">
+            <div class="orb-core">Pr</div>
+            <div class="orb-info">
+              <div class="orb-name">Premiere Pro</div>
+              <div class="orb-level">Core editing, pacing, captions</div>
+            </div>
+          </article>
+
+          <article class="software-orb reveal reveal-delay-1"
+            style="--sw-color: #b18cff; --sw-glow: rgba(177, 140, 255, 0.26);">
+            <div class="orb-core">Ae</div>
+            <div class="orb-info">
+              <div class="orb-name">After Effects</div>
+              <div class="orb-level">Motion graphics, VFX, titles</div>
+            </div>
+          </article>
+
+          <article class="software-orb reveal reveal-delay-2"
+            style="--sw-color: #31a8ff; --sw-glow: rgba(49, 168, 255, 0.26);">
+            <div class="orb-core">Ps</div>
+            <div class="orb-info">
+              <div class="orb-name">Photoshop</div>
+              <div class="orb-level">Thumbnails, cleanup, design assets</div>
+            </div>
+          </article>
+
+          <article class="software-orb reveal reveal-delay-3"
+            style="--sw-color: #ff9a00; --sw-glow: rgba(255, 154, 0, 0.24);">
+            <div class="orb-core">Ai</div>
+            <div class="orb-info">
+              <div class="orb-name">Illustrator</div>
+              <div class="orb-level">Vectors, logos, brand elements</div>
+            </div>
+          </article>
+
+          <article class="software-orb reveal reveal-delay-1"
+            style="--sw-color: #00e5cc; --sw-glow: rgba(0, 229, 204, 0.24);">
+            <div class="orb-core">Me</div>
+            <div class="orb-info">
+              <div class="orb-name">Media Encoder</div>
+              <div class="orb-level">Batch exports, format control</div>
+            </div>
+          </article>
+
+          <article class="software-orb reveal reveal-delay-2"
+            style="--sw-color: #8fd694; --sw-glow: rgba(143, 214, 148, 0.24);">
+            <div class="orb-core">AI</div>
+            <div class="orb-info">
+              <div class="orb-name">AI Workflow</div>
+              <div class="orb-level">Ideas, captions, QA, speed</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section id="testimonials">
+    <div class="section-label">Client Words</div>
+    <div class="section-title reveal">Voices of<br /><span>Satisfied Clients</span></div>
+    <p class="section-sub reveal reveal-delay-1">Real feedback from real creators and brands I've worked with.</p>
+
+    <div class="testimonials-track reveal reveal-delay-2">
+      <div class="testimonials-slider" id="testiSlider">
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Omkar transformed our raw footage into a cinematic masterpiece. The motion graphics
+            were absolutely on point. Will definitely work again!"</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Rahul Mehta</div>
+              <div class="testi-role">YouTuber · Tech Niche</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Our brand TVC came out far better than expected. Omkar understood our vision
+            immediately and delivered with stunning quality and speed."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Priya Sharma</div>
+              <div class="testi-role">Brand Manager · StartupCo</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"The podcast intro animation he made is something I get compliments on every single
+            episode. Genuinely talented with a great eye for detail."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Ananya Verma</div>
+              <div class="testi-role">Podcast Host · LifeVibes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"The turnaround time was incredible. Omkar's understanding of pacing and sound design
+            elevated our documentary to the next level."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Karan Singh</div>
+              <div class="testi-role">Creative Director · Flow Studios</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"A true professional. He doesn't just edit videos; he crafts stories. Our engagement
+            rates doubled after using his reels for our social campaigns."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Neha Patel</div>
+              <div class="testi-role">Marketing Lead · Nexus Brands</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"Finding a reliable editor who understands both VFX and color grading is rare. Omkar
+            is our go-to guy for all premium brand content."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Vikram Desai</div>
+              <div class="testi-role">Agency Owner · V/D Media</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card magnetic-btn">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-text">"The color grade he delivered was exactly what I had in mind—moody, cinematic, and
+            perfectly consistent. A brilliant collaborator."</div>
+          <div class="testi-author">
+            <img class="testi-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80"
+              alt="Client" />
+            <div>
+              <div class="testi-name">Sophie Laurent</div>
+              <div class="testi-role">Independent Filmmaker</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONNECT ===================== -->
+  <section id="connect">
+    <div class="connect-orb orb1"></div>
+    <div class="connect-orb orb2"></div>
+    <div class="connect-content">
+      <div class="section-label" style="justify-content:center">Let's Create</div>
+      <h2 class="connect-title reveal">Got a Project<br />in <span>Mind?</span></h2>
+      <p class="connect-sub reveal reveal-delay-1">Let's bring your vision to life with stunning visuals. I'm available
+        now and excited to work on your next big thing.</p>
+      <div class="connect-actions reveal reveal-delay-2">
+        <a href="https://api.whatsapp.com/send/?phone=919867315087&text&type=phone_number&app_absent=0"
+          class="btn-primary magnetic-btn">Send a Message -></a>
+        <a href="https://www.behance.net/omkarchaurasia1" target="_blank" rel="noopener"
+          class="btn-secondary magnetic-btn">View Behance</a>
+      </div>
+      <p class="connect-note reveal reveal-delay-3">Fastest response on WhatsApp. Full work samples are available on
+        Behance.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-logo">Omkar <span>Chaurasia</span></div>
+    <div class="footer-copy">(c) 2025-2026 - All Rights Reserved</div>
+    <div class="footer-links">
+      <a href="#work" class="magnetic-btn">Work</a>
+      <a href="#skills" class="magnetic-btn">Skills</a>
+      <a href="#connect" class="magnetic-btn">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
